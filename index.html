@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcja kwadratowa</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://www.desmos.com/api/v1.0/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Funkcja Kwadratowa
+        </h1>
+    </header>
+    <main>
+        <div class="fx">
+            <div class="wzor">
+                &#10765;(x) = ax<sup>2</sup> + bx + c
+            </div>
+            <div class="input-phone">
+                <input type="text" id="a" placeholder="podaj a" required>
+            </div>
+            <div class="input-phone">
+                <input type="text" id="b" placeholder="podaj b" value="">
+            </div>
+            <div class="input-phone">
+                <input type="text" id="c" placeholder="podaj c">
+            </div>
+
+        </div>
+        <button id="oblicz">Oblicz</button>
+        <div class="script">
+            <div id="wartosci">
+
+            </div>
+            <div id="calculator" style="width: 300px; height: 300px;"></div>
+
+        </div>
+    </main>
+
+    <section class="info">
+        <article class="funkcja">
+            <h2>Czym jest funkcja kwadratowa?</h2>
+            <p>Funkcja kwadratowa to funkcja którą można zapisać wzorem:</p>
+            <p class="wzor">&#10765;(x) = ax<sup>2</sup> + bx + c</p>
+            <p>gdzie:
+            <p>
+                a – współczynnik przy x<sup>2</sup>(określa, czy ramiona paraboli są skierowane
+                <span class="tooltip">
+                    w górę
+                    <span class="tooltiptext">a > 0</span>
+                </span>
+                czy
+                <span class="tooltip">
+                    w dół
+                    <span class="tooltiptext">a < 0</span>
+                    </span>
+                    ) a &NotEqual; 0,
+            </p>
+
+            <p>b – współczynnik liniowy,</p>
+            <p>c – wyraz wolny (przesunięcie funkcji na osi Y).</p>
+            <p>
+                Wykresem funkcji jest parabola o wierzchołku W = (p; q), gdzie
+            <ul>
+                <li>
+                    <math class="wzor">
+                        <mi>p</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </math>
+                </li>
+                <li>
+                    <math class="wzor">
+                        <mi>q</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>&Delta;</mi>
+                            </mrow>
+                            <mrow>
+                                <mn>4</mn>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </math>
+                </li>
+            </ul>
+            </p>
+
+            </p>
+        </article>
+        <article class="postacie">
+            <h2>Postacie funkcji kwadratowej</h2>
+            <p>Funkcje kwadratowe możemy zapisać w różnych postaciach takich jak:</p>
+            <h3>Postać ogólna funkcji kwadratowej:</h3>
+            <p>
+                <span class="wzor">
+                    &#10765;(x) = ax<sup>2</sup> + bx + c <br>
+                </span>
+                gdzie
+                <span class="wzor">
+                    a &ne; 0; b, c &isin; &#8477;, x &isin; &#8477;
+                </span>
+            </p>
+            <h3>Postać kanoniczna funkcji kwadratowej:</h3>
+            <p>
+                <span class="wzor">&#10765;(x) = a(x - x<sub>1</sub>)(x - x<sub>2</sub>) <br></span>
+                gdzie:
+                <span class="wzor">
+                    x<sub>1</sub>, x<sub>2</sub>
+                </span>
+                to miejsca zerowe.
+            </p>
+
+            <h3>Postać iloczynowa funkcji kwadratowej:</h3>
+            <p>
+                <span class="wzor">&#10765;(x) = a(x - p)<sup>2</sup> + q <br></span>
+                gdzie: p oraz q to współrzędne wierzchołka paraboli W.
+            </p>
+        </article>
+        <article class="mZerowe">
+            <h2>Miejsca zerowe</h2>
+            <p>
+                Z postaci ogólnej funkcji kwadratowej można obliczyć wyróżnik trójmianu kwadratowego, czyli Deltę:
+            </p>
+            <p class="wzor">
+                &Delta; = b<sup>2</sup> - 4ac
+            </p>
+            <p>
+            <p>&Delta; > 0, to funkcja kwadratowa ma dwa miejsca zerowe;</p>
+            <p>
+                <math class="wzor">
+                    <mrow>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mi>b</mi>
+                                </mrow>
+                                <mo>-</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <mi>&Delta;</mi>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            <p>
+                <math class="wzor">
+                    <mrow>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mi>b</mi>
+                                </mrow>
+                                <mo>+</mo>
+                                <msqrt>
+                                    <mrow>
+                                        <mi>&Delta;</mi>
+                                    </mrow>
+                                </msqrt>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </p>
+            </p>
+            <p>&Delta; = 0, to funkcja kwadratowa ma dokładnie jedno miejsce zerowe.</p>
+            <p>
+            <p>
+                <math class="wzor">
+                    <mrow>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mi>b</mi>
+                                </mrow>
+                            </mrow>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>a</mi>
+                            </mrow>
+                        </mfrac>
+                    </mrow>
+                </math>
+            </p>
+            </p>
+            <p>&Delta; < 0, to funkcją kwadratowa nie ma miejsc zerowych. </li>
+            </p>
+            <p>&Delta; &GreaterFullEqual; 0, to funkcją kwadratową możemy zapisać w postaci iloczynowej
+            </p>
+            </p>
+        </article>
+        <article class="Vietea">
+            <h2>Wzory Viete'a</h2>
+            <p>
+                Jeśli &Delta; &GreaterFullEqual; 0, to
+            <ul>
+                <li>
+                    <math class="wzor">
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>+</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo>-</mo>
+                                <mi>b</mi>
+                            </mrow>
+                            <mi>a</mi>
+                        </mfrac>
+                    </math>
+                </li>
+                <li>
+                    <math class="wzor">
+                        <msub>
+                            <mi>x</mi>
+                            <mn>1</mn>
+                        </msub>
+                        <mo>&#x22C5;</mo>
+                        <msub>
+                            <mi>x</mi>
+                            <mn>2</mn>
+                        </msub>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mi>c</mi>
+                            <mi>a</mi>
+                        </mfrac>
+                    </math>
+                </li>
+            </ul>
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        Wykonał: Bartosz Derda
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

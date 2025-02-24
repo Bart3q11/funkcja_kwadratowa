@@ -1,0 +1,169 @@
+:root {
+    --bgcolor: #FFFFFF;
+    --grid: #E0E0E0;
+    --axes: #000000;
+    --text: #333333;
+    --accent: #007ACC;
+}
+
+
+body {
+    background-color: var(--bgcolor);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+h2 {
+
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    background-color: var(--grid);
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.wzor {
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-size: 1.25rem;
+    color: var(--text);
+}
+
+li {
+    margin: 10px;
+}
+
+article {
+    border: 2px dashed var(--accent);
+    border-radius: 25px;
+    margin: 20px;
+}
+
+p {
+    padding: 0 20px;
+}
+
+.fx {
+    font-size: 2rem;
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+}
+
+input {
+    margin-top: 10px;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid rgb(167, 167, 167);
+    color: var(--text);
+}
+
+input::placeholder {
+    color: var(--accent);
+    text-align: center;
+}
+
+input:focus {
+    border: none;
+    border-bottom: 2px solid var(--accent);
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+button {
+    background-color: var(--accent);
+    color: var(--bgcolor);
+    padding: 10px;
+    font-size: 1.4rem;
+    margin: auto;
+    width: 40%;
+    border: 1px solid var(--accent);
+    border-radius: 25px;
+}
+
+button:hover {
+    background-color: var(--grid);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid var(--accent);
+  }
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 50px;
+    background-color: var(--accent);
+    color: var(--bgcolor);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 25px;
+   
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -25px;
+  }
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+@media (min-width:426px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .fx {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        flex-basis: 100%;
+    }
+
+    .script {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
